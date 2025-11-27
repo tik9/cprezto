@@ -1,7 +1,7 @@
 
 # alias
 alias a='alias | grep -i'
-alias de='declare -f'
+alias d='declare -f'
 alias t=type
 
 # cd

@@ -7,13 +7,28 @@ fac() {
 
 
 fib() {
-if (( $1 <= 1 )); then
-        echo 1
-    else
-        last=$(f $(( $1 - 1 )))
-        echo $(( $1 * last ))
+    local n=$1
+    local a=0
+    local b=1
+    local temp
+    
+    if [ $n -eq 0 ]; then
+        echo 0
+        return
     fi
+    
+    for (( i=2; i<=n; i++ )); do
+        temp=$((a + b))
+        a=$b
+        b=$temp
+    done
+    
+    echo $b
 }
+
+# Example fib
+#for i in {0..10}; do;echo "$(fib $i)";done
+
 
 nChooseK() {
     num=1
@@ -28,7 +43,7 @@ nChooseK() {
     for ((i = 1; i <= k; ++i)); do
         ((num *= $1 + 1 - i)) && ((den *= i))
     done
-    echo $((num / den))
+    echo $((num/den))
 }
 
 nrform(){

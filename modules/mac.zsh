@@ -36,6 +36,7 @@ alias nh2='ec Hallo, ich biete Online Nachhilfe per google meet. Der Preis ist 1
 
 # ${ZDOTDIR:-$HOME} will not work as destination dir because $HOME in Mac is /Users, not /home
 alias pr='echo git clone --recursive https://github.com/sorin-ionescu/prezto.git "/home/t/.zprezto"|pbcopy'
+alias cpr='echo git clone https://github.com/tik9/cprezto.git "/home/t/cprezto"|pbcopy'
 
 
 #cpu, system

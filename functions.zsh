@@ -24,7 +24,7 @@ resolution(){ system_profiler -json SPDisplaysDataType 2>/dev/null | python3 -c 
 sc(){
     # scp $1 tk@192.168.1.64:c:/users/tk/
     # scp $1 thome@192.168.1.67:/Users/thome/
-    scp -o strictHostKeyChecking=no -P8022 $1 192.168.1.78:/data/data/com.termux/files/home
+    scp -o strictHostKeyChecking=no -P8022 "$@" 192.168.1.78:/data/data/com.termux/files/home
 
 }
 

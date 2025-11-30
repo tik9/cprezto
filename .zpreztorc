@@ -1,0 +1,49 @@
+
+
+# Persönliche zprezto Konfiguration
+# https://github.com/sorin-ionescu/prezto
+# Custom Prezto settings - loaded after main zpreztorc
+
+# Prezto Modules
+zstyle ':prezto:load' pmodule \
+  'environment' \
+  'terminal' \
+  'editor' \
+  'history' \
+  'directory' \
+  'spectrum' \
+  'utility' \
+  'completion' \
+  'git' \
+  'homebrew' \
+  'syntax-highlighting' \
+  'history-substring-search' \
+  'autosuggestions' \
+  'prompt'
+
+# Prompt theme
+zstyle ':prezto:module:prompt' theme 'powerlevel10k'
+
+# Git settings
+# zstyle ':prezto:module:git:alias' skip 'no'
+
+unalias e 2>/dev/null
+
+#zstyle ':prezto:module:completion' loaded 'no'
+zstyle ':completion:*' matcher-list 'm:{a-zü}={A-Za-zÜ}'
+
+# Verzeichnis-Navigation: .. zu ../
+zstyle ':completion:*' special-dirs true
+
+for config_file in ${HOME}/cprezto/modules/*.zsh; do
+  source "$config_file"
+done
+
+source "${HOME}/cprezto/aliases.zsh"
+
+source "${HOME}/cprezto/functions.zsh"
+
+export JAVA_HOME="$HOME/Library/Application Support/minecraft/runtime/java-runtime-delta/mac-os-arm64/java-runtime-delta/jre.bundle/Contents/Home"
+export PATH="$JAVA_HOME/bin:$PATH"
+
+echo "own .zpreztorc loaded"

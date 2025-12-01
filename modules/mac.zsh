@@ -35,8 +35,8 @@ alias nr='ec 0157 3959 8220 | pbcopy'
 alias nh='ec Hallo, ich biete Online Nachhilfe per google meet. Der Preis ist 18 € für 45 Minuten. Das Material bitte als Pdf oder Bild schicken mit einem Terminvorschlag für die erste Stunde per mail an studienkreis.timo.koerner@gmail.com | pbcopy'
 
 # ${ZDOTDIR:-$HOME} will not work as destination dir because $HOME in Mac is /Users, not /home
-alias pr='echo git clone --recursive https://github.com/sorin-ionescu/prezto.git "/home/t/.zprezto"|pbcopy'
-alias cpr='echo git clone https://github.com/tik9/cprezto.git "/home/t/cprezto"|pbcopy'
+alias pr='echo git clone --recursive https://github.com/sorin-ionescu/prezto.git .zprezto"|pbcopy'
+alias cpr='echo git clone https://github.com/tik9/cprezto.git|pbcopy'
 
 
 #cpu, system

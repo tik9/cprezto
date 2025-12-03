@@ -10,6 +10,11 @@ cols(){
     for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
 }
 
+gcz(){
+    cp ~/.zpreztorc ~/cprezto/.zpreztorc
+    cp ~/.zshrc ~/cprezto/.zshrc
+    git add . && git commit -m "$1" && git push
+}
 
 ifco() { echo $(ip a) | sed -E 's/inet ([0-9]{3}\.[0-9]{3}\.[0-9]{3}\.[0-9]+).*/\1/' | grep inet }
 

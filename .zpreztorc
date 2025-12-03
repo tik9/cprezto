@@ -13,13 +13,13 @@ zstyle ':prezto:load' pmodule \
   'directory' \
   'spectrum' \
   'utility' \
-  'completion' \
   'git' \
   'homebrew' \
   'syntax-highlighting' \
   'history-substring-search' \
   'autosuggestions' \
-  'prompt'
+  'prompt' \
+  'completion' \
 
 # Prompt theme
 zstyle ':prezto:module:prompt' theme 'powerlevel10k'
@@ -35,15 +35,5 @@ zstyle ':completion:*' matcher-list 'm:{a-zü}={A-Za-zÜ}'
 # Verzeichnis-Navigation: .. zu ../
 zstyle ':completion:*' special-dirs true
 
-for config_file in ${HOME}/cprezto/modules/*.zsh; do
-  source "$config_file"
-done
-
-source "${HOME}/cprezto/aliases.zsh"
-
-source "${HOME}/cprezto/functions.zsh"
-
 export JAVA_HOME="$HOME/Library/Application Support/minecraft/runtime/java-runtime-delta/mac-os-arm64/java-runtime-delta/jre.bundle/Contents/Home"
 export PATH="$JAVA_HOME/bin:$PATH"
-
-echo "own .zpreztorc loaded"

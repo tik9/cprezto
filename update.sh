@@ -18,19 +18,25 @@ fi
 
 # eigenes repo
 echo "💾 Checking custom.."
-ZSH_CUSTOM_DIR="${0:h}"
 
-cd $ZSH_CUSTOM_DIR 
-if git status --porcelain | grep -q "."; then
-    echo "📝 Changes detected in custom config, committing..."
-    git add .
-    git commit -m "Auto-update: $(date '+%Y-%m-%d %H:%M:%S')"
-    echo "✅ Custom config committed"
+if [[ "$1" == "ja" ]]; then
+
+    ZSH_CUSTOM_DIR="${0:h}"
+
+    cd $ZSH_CUSTOM_DIR 
+    if git status --porcelain | grep -q "."; then
+        echo "📝 Changes detected in custom config, committing..."
+        git add .
+        git commit -m "Auto-update: $(date '+%Y-%m-%d %H:%M:%S')"
+        echo "✅ Custom config committed"
+    else
+        echo "✅ No changes in custom config"
+    fi
+
+    echo ""
+    echo "🎉 Update finish - Restart exec zsh"
+
 else
-    echo "✅ No changes in custom config"
+    echo "⏭️  Parameter 'ja' not provided - skipping custom repo update"
+    echo "   ./update.sh ja (to update custom repo)"
 fi
-
-echo ""
-echo "🎉 Update finish - Restart exec zsh"
-echo "📚 Custom config: $ZSH_CUSTOM_DIR"
-echo "🌐 Upstream repo: ~/.zprezto/"

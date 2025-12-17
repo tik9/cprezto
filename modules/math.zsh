@@ -46,8 +46,7 @@ nChooseK() {
     echo $((num/den))
 }
 
+
 nrform(){
-    result=$(echo "$1" | bc -l)
-    # printf "%'.0f\n" $result
-    printf "%s\n" "$(LC_NUMERIC='de_DE.UTF-8' printf "%'.0f" "$result")"
+    LC_NUMERIC="de_DE.UTF-8" printf "%'.0f\n" "$(echo "$1" | bc -l)"
 }

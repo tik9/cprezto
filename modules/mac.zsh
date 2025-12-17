@@ -4,7 +4,7 @@ wintf=en1
 
 
 # bluetooth
-alias bt='blueutil -p toggle'
+alias bt=blueutil
 
 # net
 alias et="ipconfig getifaddr $eth"
@@ -33,11 +33,12 @@ alias ib='ec de39 5001 0517 5447 5823 49 | pbcopy'
 alias ma='ec Bitte meinen Kollegen Martin wegen Stroh/Heu für einen Termin anrufen Tel. 0157 38912 559 | pbcopy'
 alias nr='ec 0157 3959 8220 | pbcopy'
 alias nh='ec Hallo, ich biete Online Nachhilfe per google meet. Der Preis ist 18 € für 45 Minuten. Das Material bitte als Pdf oder Bild schicken mit einem Terminvorschlag für die erste Stunde per mail an studienkreis.timo.koerner@gmail.com | pbcopy'
+alias sk='echo 30-810020286|pbcopy'
+alias sk2='echo Timo Körner | pbcopy'
 
-# ${ZDOTDIR:-$HOME} will not work as destination dir because $HOME in Mac is /Users, not /home
-alias pr='echo git clone --recursive https://github.com/sorin-ionescu/prezto.git .zprezto"|pbcopy'
-alias cpr='echo git clone https://github.com/tik9/cprezto.git|pbcopy'
+alias zcp='echo "cp ~/.zpreztorc ~/cprezto && cp ~/.zshrc ~/cprezto"|pbcopy'
 
+alias zgi='echo "git clone --recursive https://github.com/sorin-ionescu/prezto.git .zprezto && git clone https://github.com/tik9/cprezto.git ~/cprezto"|pbcopy'
 
 #cpu, system
 alias cpu='sysctl -n machdep.cpu.brand_string'

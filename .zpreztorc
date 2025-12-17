@@ -14,26 +14,38 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'git' \
-  'homebrew' \
   'syntax-highlighting' \
   'history-substring-search' \
   'autosuggestions' \
   'prompt' \
   'completion' \
+# 'debian' \
+# 'pacman' \
+# 'mac'
 
-# Prompt theme
-zstyle ':prezto:module:prompt' theme 'powerlevel10k'
-
-# Git settings
-# zstyle ':prezto:module:git:alias' skip 'no'
-
-unalias e 2>/dev/null
-
+# completion
 #zstyle ':prezto:module:completion' loaded 'no'
 zstyle ':completion:*' matcher-list 'm:{a-zü}={A-Za-zÜ}'
-
 # Verzeichnis-Navigation: .. zu ../
 zstyle ':completion:*' special-dirs true
+
+# prompt
+zstyle ':prezto:module:prompt' theme 'powerlevel10k'
+
+# zstyle ':prezto:module:git:alias' skip 'no'
+
+# syntax highlighters
+# By default, only the main highlighter is enabled.
+zstyle ':prezto:module:syntax-highlighting' highlighters \
+  'main' \
+  'brackets' \
+  'pattern' \
+  'line' \
+  'cursor' \
+  'root'
+
+# 
+unalias e 2>/dev/null
 
 export JAVA_HOME="$HOME/Library/Application Support/minecraft/runtime/java-runtime-delta/mac-os-arm64/java-runtime-delta/jre.bundle/Contents/Home"
 export PATH="$JAVA_HOME/bin:$PATH"

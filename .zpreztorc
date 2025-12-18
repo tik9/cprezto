@@ -19,9 +19,10 @@ zstyle ':prezto:load' pmodule \
   'autosuggestions' \
   'prompt' \
   'completion' \
-# 'debian' \
+# 'dpkg'\
+# 'homebrew'\
 # 'pacman' \
-# 'mac'
+
 
 # completion
 #zstyle ':prezto:module:completion' loaded 'no'

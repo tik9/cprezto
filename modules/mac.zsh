@@ -36,9 +36,9 @@ alias nh='ec Hallo, ich biete Online Nachhilfe per google meet. Der Preis ist 18
 alias sk='echo 30-810020286|pbcopy'
 alias sk2='echo Timo Körner | pbcopy'
 
-alias zcp='echo "cp ~/.zpreztorc ~/cprezto && cp ~/.zshrc ~/cprezto"|pbcopy'
+alias zgc='echo "git clone --recursive https://github.com/sorin-ionescu/prezto.git .zprezto && git clone https://github.com/tik9/cprezto.git ~/cprezto"|pbcopy'
 
-alias zgi='echo "git clone --recursive https://github.com/sorin-ionescu/prezto.git .zprezto && git clone https://github.com/tik9/cprezto.git ~/cprezto"|pbcopy'
+alias zgp='echo "git pull && cp ~/cprezto/.zpreztorc ~ && cp ~/cprezto/.zshrc ~"|pbcopy'
 
 #cpu, system
 alias cpu='sysctl -n machdep.cpu.brand_string'

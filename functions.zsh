@@ -1,10 +1,16 @@
 
-bachata=https://stream.zeno.fm/8c7v9dtvqp8uv
-classic=https://klassik.stream.laut.fm/klassik
-ndr=https://www.ndr.de/resources/metadaten/audio/aac/ndrblue.m3u
-salsa=http://146.71.118.220:35025/autodj
+mp() {
+    # tbd add radio stations function
+    if [[ -f "$1" ]]; then
+        mpv "$1"
+    else
+        json=~/cprezto/radiostations.json
+        echo Stations in $json:
+        jq -r 'to_entries[] | "\(.key) - \(.value)"' $json
 
-mps() {mpv $1}
+        mpv $(jq -r ".${1:-char}" $json)
+    fi
+  }
 
 cols(){
     for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
@@ -17,14 +23,9 @@ gp2(){
 }
 
 
-gpu(){
-    git pull
-    cp ~/cprezto/.zpreztorc ~/.zpreztorc
-    cp ~/cprezto/.zshrc ~/.zshrc
+ifco() { 
+    ip -4 a | grep -Eo 'inet 192\.168\.1\.[0-9]{2}/'
 }
-
-
-ifco() { echo $(ip a) | sed -E 's/inet ([0-9]{3}\.[0-9]{3}\.[0-9]{3}\.[0-9]+).*/\1/' | grep inet }
 
 mkcd() { mkdir -p "$1" && cd "$1" }
 
@@ -32,7 +33,13 @@ q(){ wget -O /dev/null http://speedtest.belwue.net/1G ; }
 
 q2(){wget -O /dev/null --progress=dot:mega http://cachefly.cachefly.net/100mb.test; }
 
-resolution(){ system_profiler -json SPDisplaysDataType 2>/dev/null | python3 -c "import sys,json;d=next(i for i in json.load(sys.stdin)['SPDisplaysDataType'][0]['spdisplays_ndrvs'] if 'spdisplays_main' in i);print(d['_spdisplays_pixels'])";}
+res(){ 
+    json_data=$(system_profiler -json SPDisplaysDataType 2>/dev/null)
+
+    echo "$json_data" | jq .
+    # Use jq to find main display with 'spdisplays_main' and grab pixels
+    echo "$json_data" | jq -r '.SPDisplaysDataType[0].spdisplays_ndrvs[] | select(has("spdisplays_main")) | ._spdisplays_pixels'
+}
 
 sc(){
     # scp $1 tk@192.168.1.64:c:/users/tk/
@@ -49,10 +56,13 @@ uzip(){
     rm -f *.zip
 }
 
-w(){
-    loc="${1:-hepberg}"
-    curl wttr.in/$loc
+w(){ curl wttr.in/${1:-hepberg}}
+
+zcp(){
+  cp ~/.zpreztorc ~/cprezto
+  cp ~/.zshrc ~/cprezto
 }
+
 
 # pdfs $@
 pdfs(){

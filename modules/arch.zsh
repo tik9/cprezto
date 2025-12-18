@@ -8,3 +8,5 @@ alias p_reduce='pactl set-sink-volume @DEFAULT_SINK@ -5%'
 
 alias bat_cap='cat /sys/class/power_supply/BAT0/capacity'
 alias bat_stat='cat /sys/class/power_supply/BAT0/status'
+
+alias pacup='sudo pacman -Syu'

@@ -16,7 +16,7 @@ alias z="cd $HOME/.zprezto"
 alias ga='git add .'
 alias gi='git diff'
 alias go='git log'
-alias grl='git remote --verbose'
+alias grv='git remote --verbose'
 alias gu='git status'
 
 # progr
@@ -36,6 +36,7 @@ alias sd=sshd
 alias pd='ps -ef|grep ssh'
 
 
+alias cp='nocorrect cp'
 alias du='date +%H:%M'
 alias dt='date +%d'
 alias e='exec zsh'
@@ -47,9 +48,7 @@ alias le="less -m"
 alias l="ls -t"
 alias m=man
 alias md=mkdir
-alias mp=mpv
 alias o=open
-alias pa='ps aux'
 alias pw=pwd
 alias p2='ps2pdf -dPDFSETTINGS=/ebook'
 alias su=sudo

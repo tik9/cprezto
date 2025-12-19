@@ -23,23 +23,14 @@ gp2(){
 }
 
 
-ifco() { 
+ic() { 
     ip -4 a | grep -Eo 'inet 192\.168\.1\.[0-9]{2}/'
 }
-
-mkcd() { mkdir -p "$1" && cd "$1" }
 
 q(){ wget -O /dev/null http://speedtest.belwue.net/1G ; }
 
 q2(){wget -O /dev/null --progress=dot:mega http://cachefly.cachefly.net/100mb.test; }
 
-res(){ 
-    json_data=$(system_profiler -json SPDisplaysDataType 2>/dev/null)
-
-    echo "$json_data" | jq .
-    # Use jq to find main display with 'spdisplays_main' and grab pixels
-    echo "$json_data" | jq -r '.SPDisplaysDataType[0].spdisplays_ndrvs[] | select(has("spdisplays_main")) | ._spdisplays_pixels'
-}
 
 sc(){
     # scp $1 tk@192.168.1.64:c:/users/tk/

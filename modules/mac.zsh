@@ -2,10 +2,6 @@
 eth=en0
 wintf=en1
 
-
-# bluetooth
-alias bt=blueutil
-
 # net
 alias et="ipconfig getifaddr $eth"
 alias ne=networkQuality
@@ -30,7 +26,7 @@ alias em2='ec t@tik1.net | pbcopy'
 alias es='ec studienkreis.timo.koerner@googlemail.com | pbcopy'
 alias fn='ec 08456 9524 297|pbcopy'
 alias ib='ec de39 5001 0517 5447 5823 49 | pbcopy'
-alias ma='ec Bitte meinen Kollegen Martin wegen Stroh/Heu für einen Termin anrufen Tel. 0157 38912 559 | pbcopy'
+alias ma='ec Bitte Tel. 0157 38912 559 anrufen | pbcopy'
 alias nr='ec 0157 3959 8220 | pbcopy'
 alias nh='ec Hallo, ich biete Online Nachhilfe per google meet. Der Preis ist 18 € für 45 Minuten. Das Material bitte als Pdf oder Bild schicken mit einem Terminvorschlag für die erste Stunde per mail an studienkreis.timo.koerner@gmail.com | pbcopy'
 alias sk='echo 30-810020286|pbcopy'
@@ -45,14 +41,27 @@ alias cpu='sysctl -n machdep.cpu.brand_string'
 alias os=sw_vers
 alias s='open -b com.apple.systempreferences'
 
+alias bt=blueutil
+
+
 ln2() {
   local cmd='setopt EXTENDED_GLOB; for i in $HOME/.zprezto/runcoms/^README.md; do ln -s "$i" "$HOME/.${i:t}"; done'
   echo "$cmd" | pbcopy
   echo "$cmd"
 }
 
-wifi_get() { /System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -I | awk -F: '/ SSID/{print $2}' }
 
+res(){ 
+    json_data=$(system_profiler -json SPDisplaysDataType 2>/dev/null)
+
+    echo "$json_data" | jq .
+    # Use jq to find main display with 'spdisplays_main' and grab pixels
+    echo "$json_data" | jq -r '.SPDisplaysDataType[0].spdisplays_ndrvs[] | select(has("spdisplays_main")) | ._spdisplays_pixels'
+}
+
+sp_lev2(){
+   system_profiler -detailLevel -2
+}
 
 unzip_() {
     downl=$HOME/downloads
@@ -62,3 +71,5 @@ unzip_() {
     unzip $icloud.zip
     open $icloud/IMG*
 }
+
+wifi_get() { /System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -I | awk -F: '/ SSID/{print $2}' }

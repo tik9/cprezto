@@ -1,6 +1,7 @@
 
 # alias
 alias a='alias | grep -i'
+alias al='alias | less'
 alias d='declare -f'
 alias t=type
 
@@ -8,21 +9,20 @@ alias t=type
 alias dc="cd $HOME/documents"
 alias dk="cd $HOME/desktop"
 alias dw="cd $HOME/downloads"
-alias r="cd $HOME/cprezto"
 alias y="cd $HOME/cpython"
-alias z="cd $HOME/.zprezto"
+alias z="cd $HOME/cprezto"
 
 # git
 alias ga='git add .'
 alias gi='git diff'
-alias go='git log'
+alias go='git log --stat'
 alias grv='git remote --verbose'
 alias gu='git status'
 
 # progr
 alias bc='bc -l<<<'
-alias ca=cat
 alias c=code
+alias ca=cat
 alias n=nano
 
 
@@ -53,5 +53,5 @@ alias pw=pwd
 alias p2='ps2pdf -dPDFSETTINGS=/ebook'
 alias su=sudo
 alias to=touch
-alias upd-pre='~/.zprezto-custom/update.sh'
+alias yt='yt-dlp -x --audio-format mp3'
 alias x=exit

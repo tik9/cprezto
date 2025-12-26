@@ -34,12 +34,12 @@ alias sk2='echo Timo Körner | pbcopy'
 
 alias zgc='echo "git clone --recursive https://github.com/sorin-ionescu/prezto.git .zprezto && git clone https://github.com/tik9/cprezto.git ~/cprezto"|pbcopy'
 
-alias zgp='echo "git pull && cp ~/cprezto/.zpreztorc ~ && cp ~/cprezto/.zshrc ~"|pbcopy'
+alias zgp='echo "git pull && cp ~/cprezto/.zshrc ~"|pbcopy'
 
 #cpu, system
 alias cpu='sysctl -n machdep.cpu.brand_string'
 alias os=sw_vers
-alias s='open -b com.apple.systempreferences'
+alias sy='open -b com.apple.systempreferences'
 
 alias bt=blueutil
 

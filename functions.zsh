@@ -49,11 +49,6 @@ uzip(){
 
 w(){ curl wttr.in/${1:-hepberg}}
 
-zcp(){
-  cp ~/.zpreztorc ~/cprezto
-  cp ~/.zshrc ~/cprezto
-}
-
 
 # pdfs $@
 pdfs(){
@@ -89,12 +84,20 @@ pdfs(){
 }
 
 
-mvfile(){
-    file=$(ls -t $HOME/downloads/* | head -1)
-    if echo $file | grep -q Honorar ; then
-        mv $file $HOME/documents/steuer/studienkreis
-        return
-    fi
-    echo no file found
+web() {
+  local url=$1
+  shift
 
+  if [[ $# -eq 0 ]]; then
+    ${(z)BROWSER:-open} "${url%search?q=}"
+    return
+  fi
+
+  # Join arguments with + for the URL
+  local query="${(j:+:)@}"
+  ${(z)BROWSER:-open} "${url}${query}"
 }
+
+
+alias goo="web 'https://www.google.com/search?q='"
+alias wiki="web 'https://en.wikipedia.org/wiki/Special:Search?search='"

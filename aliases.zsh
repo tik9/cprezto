@@ -11,6 +11,7 @@ alias dk="cd $HOME/desktop"
 alias dw="cd $HOME/downloads"
 alias y="cd $HOME/cpython"
 alias z="cd $HOME/cprezto"
+alias z2="cd $HOME/.zprezto"
 
 # git
 alias ga='git add .'
@@ -18,6 +19,10 @@ alias gi='git diff'
 alias go='git log --stat'
 alias grv='git remote --verbose'
 alias gu='git status'
+
+alias m=man
+alias mc='man curl'
+alias mt='man test'
 
 # progr
 alias bc='bc -l<<<'
@@ -39,19 +44,19 @@ alias pd='ps -ef|grep ssh'
 alias cp='nocorrect cp'
 alias du='date +%H:%M'
 alias dt='date +%d'
-alias e='exec zsh'
-alias ec='echo'
+alias e='echo'
 alias h='history'
 alias hi='history | grep'
 alias i=ifconfig
 alias le="less -m"
 alias l="ls -t"
-alias m=man
 alias md=mkdir
 alias o=open
 alias pw=pwd
 alias p2='ps2pdf -dPDFSETTINGS=/ebook'
+alias s='exec zsh'
 alias su=sudo
 alias to=touch
 alias yt='yt-dlp -x --audio-format mp3'
 alias x=exit
+alias zcp='cp ~/.zshrc ~/cprezto'

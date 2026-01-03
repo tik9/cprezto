@@ -21,18 +21,18 @@ alias o_reduce='osascript -e "set volume output volume (output volume of (get vo
 # pbcopy
 alias an='echo Hallo, ich würde es für 50 € nehmen, bitte nur melden falls der Preis in Frage kommt.|pbcopy'
 alias adr='echo Timo Körner, Bergstr. 15, 85120 Hepberg | pbcopy'
-alias em='ec user153015@gmail.com | pbcopy'
-alias em2='ec t@tik1.net | pbcopy'
-alias es='ec studienkreis.timo.koerner@googlemail.com | pbcopy'
-alias fn='ec 08456 9524 297|pbcopy'
-alias ib='ec de39 5001 0517 5447 5823 49 | pbcopy'
-alias ma='ec Bitte Tel. 0157 38912 559 anrufen | pbcopy'
-alias nr='ec 0157 3959 8220 | pbcopy'
-alias nh='ec Hallo, ich biete Online Nachhilfe per google meet. Der Preis ist 18 € für 45 Minuten. Das Material bitte als Pdf oder Bild schicken mit einem Terminvorschlag für die erste Stunde per mail an studienkreis.timo.koerner@gmail.com | pbcopy'
+alias em='echo user153015@gmail.com | pbcopy'
+alias em2='echo t@tik1.net | pbcopy'
+alias es='echo studienkreis.timo.koerner@googlemail.com | pbcopy'
+alias fn='echo 08456 9524 297|pbcopy'
+alias ib='echo de39 5001 0517 5447 5823 49 | pbcopy'
+alias ma='echo Bitte Tel. 0157 38912 559 anrufen | pbcopy'
+alias nr='echo 0157 3959 8220 | pbcopy'
+alias nh='echo Hallo, ich biete Online Nachhilfe per google meet. Der Link zu meet kommt kurz vor der Stunde per email. Der Preis ist 18 € für 45 Minuten, Bezahlung per paypal an user153015@gmail.com. Bitte einen Terminvorschlag für die erste Stunde per mail an studienkreis.timo.koerner@gmail.com | pbcopy'
 alias sk='echo 30-810020286|pbcopy'
 alias sk2='echo Timo Körner | pbcopy'
 
-alias zgc='echo "git clone --recursive https://github.com/sorin-ionescu/prezto.git .zprezto && git clone https://github.com/tik9/cprezto.git ~/cprezto"|pbcopy'
+alias zgc='echo "git clone --rechoursive https://github.com/sorin-ionescu/prezto.git .zprezto && git clone https://github.com/tik9/cprezto.git ~/cprezto"|pbcopy'
 
 alias zgp='echo "git pull && cp ~/cprezto/.zshrc ~"|pbcopy'
 
@@ -56,7 +56,7 @@ res(){
 
     echo "$json_data" | jq .
     # Use jq to find main display with 'spdisplays_main' and grab pixels
-    echo "$json_data" | jq -r '.SPDisplaysDataType[0].spdisplays_ndrvs[] | select(has("spdisplays_main")) | ._spdisplays_pixels'
+    echo "$json_data" | jq -r '.SPDisplaysDataType[0].spdisplays_ndrvs[] | selechot(has("spdisplays_main")) | ._spdisplays_pixels'
 }
 
 sp_lev2(){

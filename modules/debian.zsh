@@ -10,7 +10,7 @@ alias as='apt show'
 alias au="apt upgrade -y"
 alias in='apt install -y'
 
-function d {  apt show "$@" | grep -E 'Description|^' }
+function de {  apt show "$@" | grep -E 'Description|^' }
 
 function cb { echo "$@"|xclip -selection clipboard }
 function cc { echo `$@`|xclip -selection clipboard }

@@ -11,12 +11,14 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'git' \
-  'homebrew' \
   'completion' \
   'syntax-highlighting' \
   'history-substring-search' \
   'autosuggestions' \
-  'prompt'
+  'prompt' \
+# 'dpkg' \
+  # 'homebrew' \
+  # 'pacman' \
 
 # Configure Module Settings
 zstyle ':prezto:module:syntax-highlighting' highlighters \

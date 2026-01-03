@@ -9,6 +9,8 @@ alias t=type
 alias dc="cd $HOME/documents"
 alias dk="cd $HOME/desktop"
 alias dw="cd $HOME/downloads"
+alias mi='cd "$HOME/Library/Application Support/minecraft"'
+alias u="cd $HOME/.oh-my-zsh/custom"
 alias y="cd $HOME/cpython"
 alias z="cd $HOME/cprezto"
 alias z2="cd $HOME/.zprezto"
@@ -23,6 +25,10 @@ alias gu='git status'
 alias m=man
 alias mc='man curl'
 alias mt='man test'
+
+mccp() {
+    cp "$HOME/Downloads/$1" "$HOME/Library/Application Support/minecraft/instances/neoforge-1.21$2/mods/" 
+}
 
 # progr
 alias bc='bc -l<<<'
@@ -51,6 +57,7 @@ alias i=ifconfig
 alias le="less -m"
 alias l="ls -t"
 alias md=mkdir
+alias mv='nocorrect mv'
 alias o=open
 alias pw=pwd
 alias p2='ps2pdf -dPDFSETTINGS=/ebook'

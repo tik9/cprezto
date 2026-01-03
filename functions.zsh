@@ -1,17 +1,4 @@
 
-mp() {
-    # tbd add radio stations function
-    if [[ -f "$1" ]]; then
-        mpv "$1"
-    else
-        json=~/cprezto/radiostations.json
-        echo Stations in $json:
-        jq -r 'to_entries[] | "\(.key) - \(.value)"' $json
-
-        mpv $(jq -r ".${1:-char}" $json)
-    fi
-  }
-
 cols(){
     for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
 }
@@ -26,6 +13,19 @@ gp2(){
 ic() { 
     ip -4 a | grep -Eo 'inet 192\.168\.1\.[0-9]{2}/'
 }
+
+mp() {
+    # tbd add radio stations function
+    if [[ -f "$1" ]]; then
+        mpv "$1"
+    else
+        json=~/cprezto/radiostations.json
+        echo Stations in $json:
+        jq -r 'to_entries[] | "\(.key) - \(.value)"' $json
+
+        mpv $(jq -r ".${1:-char}" $json)
+    fi
+  }
 
 q(){ wget -O /dev/null http://speedtest.belwue.net/1G ; }
 

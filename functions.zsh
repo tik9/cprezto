@@ -50,40 +50,6 @@ uzip(){
 w(){ curl wttr.in/${1:-hepberg}}
 
 
-# pdfs $@
-pdfs(){
-    folder=$HOME/fol
-
-    new_file=$(ls $HOME/*.pdf | head -1)
-    full_length=$((${#new_file}-4))
-    # full_length=$((23-4))
-    files=$(ls $HOME/*.pdf | sort -n -k1.$full_length)
-    
-    basename_with_ext=$(basename $new_file)
-    # basename_length=${#basename}
-    new_file_base=${basename_with_ext::-4}
-    echo $files $new_file_base $full_length
-    
-    united=$folder/united.pdf
-    united2=$folder/united2.pdf    
-    
-    pdfunite $files $united
-
-    # ls -lh $united
-
-    # rm $HOME/*.pdf
-    
-    ps2pdf -dPDFSETTINGS=/ebook $united $united2
-    # ls -lh $united2
-    
-    mv $united2 $united && mv $united $folder/$new_file_base.pdf
-    # open $folder/$new_file_base.pdf
-
-    # ls -lh $folder/$new_file_base.pdf
-
-}
-
-
 web() {
   local url=$1
   shift
@@ -98,6 +64,15 @@ web() {
   ${(z)BROWSER:-open} "${url}${query}"
 }
 
-
 alias goo="web 'https://www.google.com/search?q='"
-alias wiki="web 'https://en.wikipedia.org/wiki/Special:Search?search='"
+
+zscp() {
+    # Usage: zscp [IP_SUFFIX] [PATH] [PORT] [USER]
+    
+    local ip_suffix="${1:-78}"
+    local target_path="${2:-/data/data/com.termux/files/home}"
+    local port="${3:-8022}"
+    local username="${4:-$(whoami)}" # Defaults to current user if $4 is empty
+
+    scp -v -o StrictHostKeyChecking=no -r -P "$port" own/ "${username}@192.168.1.${ip_suffix}:${target_path}/.zprezto/modules/"
+}

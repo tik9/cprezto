@@ -32,7 +32,7 @@ alias nh='echo Hallo, ich biete Online Nachhilfe per google meet. Der Link zu me
 alias sk='echo 30-810020286|pbcopy'
 alias sk2='echo Timo Körner | pbcopy'
 
-alias zgc='echo "git clone --rechoursive https://github.com/sorin-ionescu/prezto.git .zprezto && git clone https://github.com/tik9/cprezto.git ~/cprezto"|pbcopy'
+alias zgc='echo "git clone --recursive https://github.com/sorin-ionescu/prezto.git .zprezto && git clone https://github.com/tik9/cprezto.git ~/cprezto"|pbcopy'
 
 alias zgp='echo "git pull && cp ~/cprezto/.zshrc ~"|pbcopy'
 
@@ -42,13 +42,6 @@ alias os=sw_vers
 alias sy='open -b com.apple.systempreferences'
 
 alias bt=blueutil
-
-
-ln2() {
-  local cmd='setopt EXTENDED_GLOB; for i in $HOME/.zprezto/runcoms/^README.md; do ln -s "$i" "$HOME/.${i:t}"; done'
-  echo "$cmd" | pbcopy
-  echo "$cmd"
-}
 
 
 res(){ 

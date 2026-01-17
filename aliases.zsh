@@ -25,6 +25,7 @@ alias gu='git status'
 alias m=man
 alias mc='man curl'
 alias mt='man test'
+alias mz='man zsh'
 
 mccp() {
     cp "$HOME/Downloads/$1" "$HOME/Library/Application Support/minecraft/instances/neoforge-1.21$2/mods/" 

@@ -42,6 +42,7 @@ alias os=sw_vers
 alias sy='open -b com.apple.systempreferences'
 
 alias bt=blueutil
+alias op='open "$(ls -t|grep -v /|head -1)"'
 
 
 res(){ 

@@ -26,11 +26,9 @@ alias em2='echo t@tik1.net | pbcopy'
 alias es='echo studienkreis.timo.koerner@googlemail.com | pbcopy'
 alias fn='echo 08456 9524 297|pbcopy'
 alias ib='echo de39 5001 0517 5447 5823 49 | pbcopy'
-alias ma='echo Bitte Tel. 0157 38912 559 anrufen | pbcopy'
 alias nr='echo 0157 3959 8220 | pbcopy'
-alias nh='echo Hallo, ich biete Online Nachhilfe per google meet. Der Link zu meet kommt kurz vor der Stunde per email. Der Preis ist 18 € für 45 Minuten, Bezahlung per paypal an user153015@gmail.com. Bitte einen Terminvorschlag für die erste Stunde per mail an studienkreis.timo.koerner@gmail.com | pbcopy'
-alias sk='echo 30-810020286|pbcopy'
-alias sk2='echo Timo Körner | pbcopy'
+alias sk2='echo 30-810020286|pbcopy'
+alias sk='echo Timo Körner | pbcopy'
 
 alias zgc='echo "git clone --recursive https://github.com/sorin-ionescu/prezto.git .zprezto && git clone https://github.com/tik9/cprezto.git ~/cprezto"|pbcopy'
 

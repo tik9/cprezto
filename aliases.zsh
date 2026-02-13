@@ -27,9 +27,6 @@ alias mc='man curl'
 alias mt='man test'
 alias mz='man zsh'
 
-mccp() {
-    cp "$HOME/Downloads/$1" "$HOME/Library/Application Support/minecraft/instances/neoforge-1.21$2/mods/" 
-}
 
 # progr
 alias bc='bc -l<<<'
@@ -57,9 +54,11 @@ alias hi='history | grep'
 alias i=ifconfig
 alias le="less -m"
 alias l="ls -t"
+alias mcmod='cp "$(ls -t ~/Downloads/*.jar | head -1)" "$HOME/Library/Application Support/minecraft/mods/" && echo "Neueste .jar kopiert"'
 alias md=mkdir
 alias mv='nocorrect mv'
 alias o=open
+alias pl='pv live'
 alias pw=pwd
 alias p2='ps2pdf -dPDFSETTINGS=/ebook'
 alias s='exec zsh'

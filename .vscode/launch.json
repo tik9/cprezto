@@ -1,0 +1,12 @@
+
+{
+    "configurations": [
+        {
+            "request": "launch",
+            "type": "bashdb",
+            "name": "Bash-Debug",
+            "program": "${file}",
+        },
+        
+    ]
+}

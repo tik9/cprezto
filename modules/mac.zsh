@@ -2,6 +2,10 @@
 eth=en0
 wintf=en1
 
+#brew
+alias breu='brew uses --installed'
+alias brei='brew info'
+
 # net
 alias et="ipconfig getifaddr $eth"
 alias ne=networkQuality
@@ -19,16 +23,15 @@ alias o_reduce='osascript -e "set volume output volume (output volume of (get vo
 
 
 # pbcopy
-alias an='echo Hallo, ich würde es für 50 € nehmen, bitte nur melden falls der Preis in Frage kommt.|pbcopy'
 alias adr='echo Timo Körner, Bergstr. 15, 85120 Hepberg | pbcopy'
 alias em='echo user153015@gmail.com | pbcopy'
 alias em2='echo t@tik1.net | pbcopy'
 alias es='echo studienkreis.timo.koerner@googlemail.com | pbcopy'
 alias fn='echo 08456 9524 297|pbcopy'
 alias ib='echo de39 5001 0517 5447 5823 49 | pbcopy'
+alias na='echo Timo Körner | pbcopy'
 alias nr='echo 0157 3959 8220 | pbcopy'
-alias sk2='echo 30-810020286|pbcopy'
-alias sk='echo Timo Körner | pbcopy'
+alias sk='echo 30-810020286|pbcopy'
 
 alias zgc='echo "git clone --recursive https://github.com/sorin-ionescu/prezto.git .zprezto && git clone https://github.com/tik9/cprezto.git ~/cprezto"|pbcopy'
 
@@ -40,7 +43,6 @@ alias os=sw_vers
 alias sy='open -b com.apple.systempreferences'
 
 alias bt=blueutil
-alias op='open "$(ls -t|grep -v /|head -1)"'
 
 
 res(){ 
@@ -51,9 +53,7 @@ res(){
     echo "$json_data" | jq -r '.SPDisplaysDataType[0].spdisplays_ndrvs[] | selechot(has("spdisplays_main")) | ._spdisplays_pixels'
 }
 
-sp_lev2(){
-   system_profiler -detailLevel -2
-}
+sp_lev2(){ system_profiler -detailLevel -2 }
 
 unzip_() {
     downl=$HOME/downloads

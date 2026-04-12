@@ -2,13 +2,14 @@
 # alias
 alias a='alias | grep -i'
 alias al='alias | less'
-alias d='declare -f'
+alias de='declare -f'
 alias t=type
 
 # cd
 alias dc="cd $HOME/documents"
 alias dk="cd $HOME/desktop"
-alias dw="cd $HOME/downloads"
+alias d="cd $HOME/downloads"
+alias ma="cd $HOME/max"
 alias mi='cd "$HOME/Library/Application Support/minecraft"'
 alias u="cd $HOME/.oh-my-zsh/custom"
 alias y="cd $HOME/cpython"
@@ -54,7 +55,8 @@ alias hi='history | grep'
 alias i=ifconfig
 alias le="less -m"
 alias l="ls -t"
-alias mcmod='cp "$(ls -t ~/Downloads/*.jar | head -1)" "$HOME/Library/Application Support/minecraft/mods/" && echo "Neueste .jar kopiert"'
+alias mcmod='cp "$(ls -t ~/Downloads/*.jar | head -1)" "$HOME/Library/Application Support/minecraft/instances/neoforge-1.21/mods/"'
+alias mcmodcf='cp "$(ls -t ~/Downloads/*.jar | head -1)" "~/Library/Application Support/minecraft/mods/instances/1.21.1/mods'
 alias md=mkdir
 alias mv='nocorrect mv'
 alias o=open

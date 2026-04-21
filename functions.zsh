@@ -11,7 +11,7 @@ gp2(){
 
 
 ic() { 
-    ip -4 a | grep -Eo 'inet 192\.168\.1\.[0-9]{2}/'
+    ip -4 a | grep -Eo 'inet 192\.168\.0\.[0-9]'
 }
 
 mp() {
@@ -33,9 +33,9 @@ q2(){wget -O /dev/null --progress=dot:mega http://cachefly.cachefly.net/100mb.te
 
 
 sc(){
-    # scp $1 tk@192.168.1.64:c:/users/tk/
-    # scp $1 thome@192.168.1.67:/Users/thome/
-    scp -o strictHostKeyChecking=no -P8022 "$@" 192.168.1.78:/data/data/com.termux/files/home
+    # scp $1 tk@192.168.0.64:c:/users/tk/
+    # scp $1 thome@192.168.0.9:/Users/thome/
+    scp -o strictHostKeyChecking=no -P8022 "$@" 192.168.0.151:/data/data/com.termux/files/home
 
 }
 
@@ -74,5 +74,5 @@ zscp() {
     local port="${3:-8022}"
     local username="${4:-$(whoami)}" # Defaults to current user if $4 is empty
 
-    scp -v -o StrictHostKeyChecking=no -r -P "$port" own/ "${username}@192.168.1.${ip_suffix}:${target_path}/.zprezto/modules/"
+    scp -v -o StrictHostKeyChecking=no -r -P "$port" own/ "${username}@192.168.0.${ip_suffix}:${target_path}/.zprezto/modules/"
 }

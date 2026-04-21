@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-local INVERTER_IP="192.168.1.180"
+local INVERTER_IP="192.168.0.180"
 local TIMEOUT=3
 
 pv() {

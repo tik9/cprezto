@@ -40,6 +40,7 @@ alias n=nano
 alias rf='rm -rf'
 alias rm='nocorrect rm'
 alias rm_today='find . -type f -cmin -1 -delete'
+alias rp='rm *.pdf'
 
 # ssh
 alias sd=sshd

@@ -1,12 +1,11 @@
 #!/bin/zsh
 
-local INVERTER_IP="192.168.0.180"
-local TIMEOUT=3
+INVERTER_IP="192.168.0.180"
+TIMEOUT=5
 
 pv() {
     # Parameter: needed, prod, grid, bat, all (Standard: all)
-    local param="${1:-all}"
-    local json_data
+    param="${1:-all}"
     
     # Funktion rekursiv mit 'all'
     if [[ "$param" == "live" ]]; then
@@ -20,8 +19,8 @@ pv() {
         return 0
     fi
 
-    json_data=$(curl -s --connect-timeout "$TIMEOUT" "http://$INVERTER_IP/solar_api/v1/GetPowerFlowRealtimeData.fcgi")
-    
+    json_data=$(curl -s --connect-timeout "$TIMEOUT" --max-time $TIMEOUT "http://$INVERTER_IP/solar_api/v1/GetPowerFlowRealtimeData.fcgi")
+
     if [[ $? -ne 0 ]] || [[ -z "$json_data" ]]; then
         echo "Netzwerkfehler: Wechselrichter nicht erreichbar"
         return 1

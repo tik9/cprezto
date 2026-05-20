@@ -1,5 +1,5 @@
 
-folder=$HOME/fol
+folder=$HOME/tmp
 
 # count=18
 new_file=$(ls $HOME/*.pdf | head -1)

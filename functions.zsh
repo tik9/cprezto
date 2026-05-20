@@ -66,6 +66,10 @@ web() {
 
 alias goo="web 'https://www.google.com/search?q='"
 
+yt(){
+    yt-dlp -x --audio-format mp3 -o "$2.%(ext)s" $1
+}
+
 zscp() {
     # Usage: zscp [IP_SUFFIX] [PATH] [PORT] [USER]
     

@@ -9,12 +9,13 @@ alias t=type
 alias dc="cd $HOME/documents"
 alias dk="cd $HOME/desktop"
 alias d="cd $HOME/downloads"
-alias ma="cd $HOME/max"
+alias ma="cd $HOME/max/noten"
 alias mi='cd "$HOME/Library/Application Support/minecraft"'
-alias u="cd $HOME/.oh-my-zsh/custom"
+alias p="cd $HOME/documents/privat"
+alias u="cd $HOME/unterhalt"
 alias y="cd $HOME/cpython"
 alias z="cd $HOME/cprezto"
-alias z2="cd $HOME/.zprezto"
+alias zz="cd $HOME/.zprezto"
 
 # git
 alias ga='git add .'
@@ -67,6 +68,5 @@ alias p2='ps2pdf -dPDFSETTINGS=/ebook'
 alias s='exec zsh'
 alias su=sudo
 alias to=touch
-alias yt='yt-dlp -x --audio-format mp3'
 alias x=exit
 alias zcp='cp ~/.zshrc ~/cprezto'

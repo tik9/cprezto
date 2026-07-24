@@ -39,6 +39,12 @@ sc(){
 
 }
 
+akt_ssh(){
+    # (de)aktivieren ssh
+    sudo systemsetup -setremotelogin on
+    sudo systemsetup -setremotelogin off
+}
+
 uzip(){
     cd $HOME/downloads
     find ./ -name \*.zip -exec unzip {} \; &&

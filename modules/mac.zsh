@@ -3,8 +3,8 @@ eth=en0
 wintf=en1
 
 #brew
-alias breu='brew uses --installed'
-alias brei='brew info'
+alias bu='brew uses --installed'
+alias bi='brew info'
 
 # net
 alias et="ipconfig getifaddr $eth"
@@ -25,13 +25,13 @@ alias o_reduce='osascript -e "set volume output volume (output volume of (get vo
 # pbcopy
 alias adr='echo Timo Körner, Bergstr. 15, 85120 Hepberg | pbcopy'
 alias em='echo user153015@gmail.com | pbcopy'
-alias em2='echo t@tik1.net | pbcopy'
-alias es='echo studienkreis.timo.koerner@googlemail.com | pbcopy'
+alias e='echo t@tik1.net | pbcopy'
+alias ee='echo studienkreis.timo.koerner@googlemail.com | pbcopy'
+alias es='echo studienkreis.timo.koerner@gmail.com | pbcopy'
 alias fn='echo 08456 9524 297|pbcopy'
 alias ib='echo de39 5001 0517 5447 5823 49 | pbcopy'
 alias na='echo Timo Körner | pbcopy'
 alias nr='echo 0157 3959 8220 | pbcopy'
-alias sk='echo 30-810020286|pbcopy'
 
 alias zgc='echo "git clone --recursive https://github.com/sorin-ionescu/prezto.git .zprezto && git clone https://github.com/tik9/cprezto.git ~/cprezto"|pbcopy'
 
@@ -44,6 +44,16 @@ alias sy='open -b com.apple.systempreferences'
 
 alias bt=blueutil
 
+firewall_mc(){
+    # /etc/pf.anchors/minecraft
+    #fw aktivieren und regel laden:
+    sudo pfctl -e
+    sudo pfctl -f /etc/pf.conf
+
+    #regelliste:
+    sudo pfctl -sr
+
+}
 
 res(){ 
     json_data=$(system_profiler -json SPDisplaysDataType 2>/dev/null)

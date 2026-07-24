@@ -67,7 +67,7 @@ pv() {
             printf "%-15s %7s\n" "Verbrauch:" "${needed} W"
             printf "%-15s %7s\n" "Erzeugung:"  "${prod} W"
             # %b für Farbcodes
-            printf "%-15s %b%7s%b\n" "Netzbezug:" "$color_grid" "${grid} W" "$reset"
+            printf "%-15s %b%7s%b\n" "Bezug/Einspeisung:" "$color_grid" "${grid} W" "$reset"
             printf "%-15s %7s\n" "Batterie:"  "${bat} %"
             ;;
         *)
@@ -77,7 +77,7 @@ pv() {
     esac
 }
 
-# Aufruf Skript direkt aus Terminal - nicht gesourced
+# Aufruf Skript aus Terminal - nicht gesourced
 if [[ "$ZSH_EVAL_CONTEXT" == "toplevel" ]]; then
     pv "$@"
 fi
